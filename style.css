@@ -1,0 +1,316 @@
+/* =========================================================
+   Feuille de style du site JNM 2027
+   Pour changer les couleurs du site, modifier les variables
+   ci-dessous : elles sont utilisées partout dans le fichier.
+   ========================================================= */
+
+:root {
+  --couleur-principale: #1d3fbb;   /* bleu */
+  --couleur-accent: #f2a900;       /* jaune doré */
+  --couleur-texte: #1f2430;
+  --couleur-fond: #ffffff;
+  --couleur-fond-clair: #f3f5fb;
+  --couleur-a-completer: #fff4d6;
+  --largeur-max: 1100px;
+  --arrondi: 12px;
+}
+
+/* ----- Réglages généraux ----- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;       /* défilement doux vers les sections */
+  scroll-padding-top: 70px;      /* évite que le menu cache les titres */
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--couleur-texte);
+  background: var(--couleur-fond);
+}
+
+a {
+  color: var(--couleur-principale);
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 0;
+  color: var(--couleur-principale);
+}
+
+section {
+  padding: 4rem 1rem;
+}
+
+.conteneur {
+  max-width: var(--largeur-max);
+  margin: 0 auto;
+}
+
+.centre {
+  text-align: center;
+}
+
+.fond-clair {
+  background: var(--couleur-fond-clair);
+}
+
+/* Textes provisoires : bien visibles pour ne pas les oublier */
+.a-completer {
+  background: var(--couleur-a-completer);
+  border-left: 4px solid var(--couleur-accent);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-style: italic;
+}
+
+/* ----- En-tête et menu ----- */
+.entete {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding: 0.8rem 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: var(--couleur-principale);
+}
+
+.logo span {
+  color: var(--couleur-accent);
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.2rem;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--couleur-texte);
+  font-weight: 500;
+}
+
+.menu a:hover {
+  color: var(--couleur-principale);
+}
+
+/* ----- Accueil ----- */
+.accueil {
+  padding: 6rem 1rem;
+  text-align: center;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1d3fbb 0%, #5b2bb5 100%);
+}
+
+.surtitre {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.accueil h1 {
+  font-size: clamp(3rem, 12vw, 6rem);  /* taille qui s'adapte à l'écran */
+  margin: 0.2rem 0 1rem;
+}
+
+.infos-cles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.infos-cles span {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+}
+
+.accroche {
+  max-width: 600px;
+  margin: 1.5rem auto;
+}
+
+/* ----- Boutons ----- */
+.boutons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.bouton {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  background: var(--couleur-accent);
+  color: var(--couleur-texte);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.bouton:hover {
+  transform: translateY(-2px);
+}
+
+.bouton-secondaire {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+/* ----- Cartes (présentation) ----- */
+.cartes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.carte {
+  padding: 1.5rem;
+  border-radius: var(--arrondi);
+  background: var(--couleur-fond-clair);
+}
+
+.carte h3 {
+  margin-top: 0;
+}
+
+/* ----- Programme ----- */
+.jours {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.jour {
+  background: var(--couleur-fond);
+  border-radius: var(--arrondi);
+  padding: 1.5rem;
+  border-top: 5px solid var(--couleur-principale);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.jour h3 {
+  margin-top: 0;
+  color: var(--couleur-principale);
+}
+
+.jour ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.jour li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e3e6ef;
+}
+
+.jour li:last-child {
+  border-bottom: none;
+}
+
+/* ----- Lieu et accès ----- */
+.deux-colonnes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.liste-acces {
+  padding-left: 0;
+  list-style: none;
+}
+
+.liste-acces li {
+  margin-bottom: 0.8rem;
+}
+
+/* ----- Partenaires ----- */
+.partenaires {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.partenaire {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  background: var(--couleur-fond);
+  border: 2px dashed #c8cee0;
+  border-radius: var(--arrondi);
+}
+
+.partenaire img {
+  max-width: 100%;
+  max-height: 70px;
+}
+
+/* ----- Pied de page ----- */
+.pied {
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background: var(--couleur-texte);
+}
+
+/* ----- Petits écrans (téléphones) ----- */
+@media (max-width: 600px) {
+  section {
+    padding: 3rem 1rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .entete {
+    justify-content: center;
+    padding: 0.6rem 1rem;
+  }
+
+  .menu {
+    justify-content: center;
+    font-size: 0.95rem;
+  }
+
+  html {
+    scroll-padding-top: 110px;   /* le menu est plus haut sur mobile */
+  }
+}
